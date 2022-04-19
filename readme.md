@@ -6,4 +6,4 @@ ____
 ____
 ##### Tema: *Hamburgueria*.
 ____
-(https://github.com/raphhaelm/ProjetoFinalModulo4/blob/main/utils/apresentacao.png?raw=true)
+(<img src:"https://github.com/raphhaelm/ProjetoFinalModulo4/blob/main/utils/apresentacao.png?raw=true">)
