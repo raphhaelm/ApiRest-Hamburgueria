@@ -7,6 +7,7 @@ import * as dotenv from "dotenv";
 import { openDb }  from "./infra/configDB.js";
 import { tablePedido } from "../src/controllers/controllersPedidos.js";
 import {tableCardapio } from "../src/controllers/controllersCardapio.js";
+import { tableClientes } from "../src/controllers/controllersClientes.js";
 
 dotenv.config();
 // openDb();
