@@ -1,4 +1,5 @@
-import { openDb }  from "../infra/configDB.js"; 
-import { tablePedido } from "../controllers/controllersPedidos.js";
-openDb();
-tablePedido();
+import Database from "../infra/configDB.js";
+import DatabaseMetodos from "../DAO/DatabaseMetodos.js";
+import { tablePedido } from "../DAO/DatabaseMetodos.js";
+
+DatabaseMetodos.tablePedido();

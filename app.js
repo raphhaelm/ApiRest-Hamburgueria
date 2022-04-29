@@ -6,14 +6,14 @@ import router from "./src/rotas/routes.js";
 import * as dotenv from "dotenv";
 
 dotenv.config();
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+
 app.use(router);
-
-
 
 app.listen(port, () => {
   console.log(`
@@ -31,4 +31,4 @@ app.listen(port, () => {
 https.createServer({
   cert: fs.readFileSync('src/SSL/code.crt'),
   key: fs.readFileSync('src/SSL/code.key')
-}, app).listen(3001, () => console.log("https OK"));
+}, app).listen(3001, () => console.log("Protocolo https ativado com sucesso"));

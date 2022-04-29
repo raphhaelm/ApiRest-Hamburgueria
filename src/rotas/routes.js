@@ -8,9 +8,9 @@ router.get('/', (req, res) => {
 
 
 router.get("/pedidos", sltPedidos);
-router.get("/pedido", sltPedido);
+router.get("/pedido/:id", sltPedido);
 router.post("/pedido", insertPedido);
-router.put("/pedido", uptPedido);
-router.delete("/pedido", delPedido);
+router.put("/pedido/:id", uptPedido);
+router.delete("/pedido/:id", delPedido);
 
 export default router;

@@ -1,64 +1,57 @@
-import { openDb } from "../infra/configDB.js";
+import DatabaseMetodos from "../DAO/DatabaseMetodos.js"
+import PedidosModel from "../models/modelsPedidos.js"
 
-export async function tablePedido() {
-    const pedido = `CREATE TABLE IF NOT EXISTS Pedido
-                     (id INTEGER PRIMARY KEY,
-                      nome TEXT,
-                      produto TEXT,
-                      preco INTEGER)`;
-
-    openDb().then(db => {
-        db.exec(pedido)
-    })
-};
 export async function insertPedido(req, res) {
-    let pedido = req.body;
-    openDb().then(db => {
-        db.run(`INSERT INTO Pedido 
-        (nome, produto, preco) 
-        VALUES (?, ?, ?)`,
-            [pedido.nome, pedido.produto, pedido.preco]
-        )
-    });
-    res.json({
-        "statusCode": 200
-    })
+    try {
+        const tabela = await DatabaseMetodos.tablePedido();
+        const pedido = new PedidosModel(...Object.values(req.body));
+        const response = await DatabaseMetodos.inserirPedido(pedido)
+        res.status(201).json(response)
+    } catch (e) {
+        res.status(400).json({ erro: e.message });
+    }
 }
+
 export async function uptPedido(req, res) {
-    let pedido = req.body;
-    openDb().then(db => {
-        db.run(`UPDATE Pedido 
-        SET nome=?, produto=?, preco=?  
-        WHERE id=?`,
-            [pedido.nome, pedido.produto, pedido.preco, pedido.id]
-        )
-    });
-    res.json({
-        "statusCode": 200
-    })
+    const id = req.body.id
+    const nome = req.body.nome
+    const produto = req.body.produto
+    const preco = req.body.preco
+    try {
+        const pedido = new PedidosModel(id,nome,produto,preco);
+        console.log(pedido)
+        console.log(req.body.id)
+        const response = await DatabaseMetodos.updatePedidoId(id,nome,produto,preco)
+        res.status(200).json(response)
+    } catch (e) {
+        res.status(400).json({ erro: e.message })
+    }
 }
-export async function sltPedidos(req, res) {
-    openDb().then(db => {
-        db.all(`SELECT * FROM Pedido`)
-            .then(pedidos => res.json(pedidos))
-    });
-}
+
 export async function sltPedido(req, res) {
-    let id = req.body.id
-    openDb().then(db => {
-        db.get(`SELECT * FROM Pedido WHERE id=?`, [id])
-            .then(pedido => res.json(pedido))
-    });
+    
+    try {
+        const response = await DatabaseMetodos.selecionarPedido(req.params.id);
+        res.status(200).json(response);
+    } catch (e) {
+        res.status(400).json({ erro: e.message })
+    };
 }
-export async function delPedido(req, res) {
-    let id = req.body.id;
-    openDb().then(db => {
-        db.run(`DELETE From Pedido 
-                WHERE id=?`,
-            [id]
-        )
-    });
-    res.json({
-        "statusCode": 200
-    })
+
+export async function sltPedidos(req, res) {
+    try {
+        const response = await DatabaseMetodos.selecionarPedidos();
+        res.status(200).json(response);
+    } catch (e) {
+        res.status(400).json({ erro: e.message })
+    };
 }
+
+export async function delPedido(req, res){
+    try{
+        const response = await DatabaseMetodos.deletaPedido(req.params.id);
+        res.status(200).json(response);
+    } catch (e){
+        res.status(400).json({erro: e.message})
+    }
+};
