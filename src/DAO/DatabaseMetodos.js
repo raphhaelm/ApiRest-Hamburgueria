@@ -32,14 +32,15 @@ class DatabaseMetodos {
             })
         })
     }
-    static updatePedidoId(usuario, id) {
-        const query = `UPDATE Pedido SET (id, nome, produto, preco) = (?,?,?,?) WHERE id = ?`;
+    static updatePedidoId(pedido, id) {
+        const query = `UPDATE Pedido SET (nome, produto, preco) = (?,?,?) WHERE id = ?`;
+        const body = Object.values(pedido)
         return new Promise((resolve, reject) => {
-            Database.run(query, [...usuario, id], (e, result) => {
+            Database.run(query, [...body, id], (e, result) => {
                 if (e) {
                     reject(e.message)
                 } else {
-                    resolve(result)
+                    resolve({ "message": "Pedido alterado!" })
                 }
             })
         })
@@ -82,6 +83,5 @@ class DatabaseMetodos {
         })
     }
 }
-
 
 export default DatabaseMetodos;
