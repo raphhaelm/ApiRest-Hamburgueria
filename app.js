@@ -4,9 +4,10 @@ import https from "https";
 import cors from "cors";
 import routerPedido from "./src/rotas/routesPedido.js";
 import routerClientes from "./src/rotas/routesClientes.js";
+import routerFornecedores from "./src/rotas/routesFornecedores.js"
 import * as dotenv from "dotenv";
 import DatabaseMetodosClientes from "./src/DAO/DatabaseMetodosClientes.js"
-
+import DatabaseMetodosFornecedores from "./src/DAO/DatabaseMetodosFornecedores.js";
 
 dotenv.config();
 
@@ -18,8 +19,10 @@ app.use(express.json());
 
 app.use(routerPedido);
 app.use(routerClientes);
+app.use(routerFornecedores);
 
 DatabaseMetodosClientes.createTableClientes();
+DatabaseMetodosFornecedores.tableFornecedores();
 
 app.listen(port, () => {
   console.log(`
