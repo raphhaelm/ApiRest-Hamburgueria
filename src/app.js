@@ -2,17 +2,16 @@ import express from "express";
 import fs from "fs";
 import https from "https";
 import cors from "cors";
-import router from "./rotas/routes.js";
+import router from "./rotas/CardapioRoutes.js";
 import * as dotenv from "dotenv";
-import { openDb }  from "./infra/configDB.js";
-import { tablePedido } from "../src/controllers/controllersPedidos.js";
-import {tableCardapio } from "../src/controllers/controllersCardapio.js";
+
+
 
 dotenv.config();
-// openDb();
-// tablePedido();
+
+
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3005;
 
 app.use(express.json());
 app.use(cors());
