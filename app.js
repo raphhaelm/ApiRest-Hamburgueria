@@ -2,8 +2,11 @@ import express from "express";
 import fs from "fs";
 import https from "https";
 import cors from "cors";
-import router from "./src/rotas/routes.js";
+import routerPedido from "./src/rotas/routesPedido.js";
+import routerClientes from "./src/rotas/routesClientes.js";
 import * as dotenv from "dotenv";
+import DatabaseMetodosClientes from "./src/DAO/DatabaseMetodosClientes.js"
+
 
 dotenv.config();
 
@@ -13,7 +16,10 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use(router);
+app.use(routerPedido);
+app.use(routerClientes);
+
+DatabaseMetodosClientes.createTableClientes();
 
 app.listen(port, () => {
   console.log(`
