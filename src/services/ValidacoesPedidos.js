@@ -6,8 +6,16 @@ static validaNome(str){
         return false
     }
 }
-static ValidaPedido(produto){
-    if(produto != ""){
+static validaPedido(produto){
+    if(produto.length > 0){
+        return true
+    } else {
+        return false
+    }
+}
+static validaPreco(preco){
+    const precoNum = parseInt(preco);
+    if(precoNum == preco){
         return true
     } else {
         return false
