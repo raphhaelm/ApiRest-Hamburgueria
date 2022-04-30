@@ -30,7 +30,7 @@ res.status(200).json(response)
 
 export async function sltProdutos(req, res) {
     try {
-        const response = await DatabasaMetodosCardapio.selecionarProdutos() 
+        const response = await DatabaseMetodosCardapio.selecionarProdutos() 
         res.status(200).json(response)
     } catch (e) {
         res.status(400).json({erro:e.message})
@@ -39,7 +39,7 @@ export async function sltProdutos(req, res) {
 
 export async function sltProduto(req, res) {
     try {
-        const response = await DatabasaMetodosCardapio.selecionarProduto(req.params.id) 
+        const response = await DatabaseMetodosCardapio.selecionarProduto(req.params.id) 
         res.status(200).json(response)
     } catch (e) {
         res.status(400).json({erro:e.message})
@@ -48,7 +48,7 @@ export async function sltProduto(req, res) {
 
 export async function delProduto(req, res) {
     try {
-        const response = await DatabasaMetodosCardapio.deleteProduto(req.params.id) 
+        const response = await DatabaseMetodosCardapio.deleteProduto(req.params.id) 
         res.status(200).json(response)
     } catch (e) {
         res.status(400).json({erro:e.message})

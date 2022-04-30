@@ -3,26 +3,34 @@ import Database from "../infra/configDB.js"
 class DatabaseMetodosCardapio {
 
     static createTableCardapio() {
-        const cardapio = `CREATE TABLE IF NOT EXISTIS cardapio (
+        const cardapio = `CREATE TABLE IF NOT EXISTS cardapio (
             id_produto INTEGER PRIMARY KEY AUTOINCREMENT,
             produto VARCHAR,
             preco INT)`
+
         return new Promise((resolve, reject) => {
             Database.run(cardapio, (e) => {
                 if (e) {
                     reject(e)
                 } else {
-                    resolve({ message: "Tabela cardapio criada" })
+                    resolve("Tabela cardapio criada com sucesso")
                 }
             })
         })
     }
+/**
+ * 
+ * @param {Object} produto 
+ * @returns Promisse<Object>
+ */
+
+
     static inserirProduto(produto) {
-        const query = `INSERT INTO Cardapio (
-            id_produto
-            produto,
-            preco
-        ) = (?, ?, ?))`;
+        const query = `INSERT INTO Cardapio VALUES (?, ? , ?)`
+        //     id_produto
+        //     produto,
+        //     preco
+        // ) = (?, ?, ?))`;
         const body = Object.values(produto)
         return new Promise((resolve, reject) => {
             Database.run(query, [...body], (e) => {
