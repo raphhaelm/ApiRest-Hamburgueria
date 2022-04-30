@@ -27,7 +27,7 @@
     "https": "^1.0.0",
     "path": "^0.12.7",
     "sqlite": "^4.1.1",
-    "sqlite3": "^5.0.5"
+    "sqlite3": "^5.0.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
