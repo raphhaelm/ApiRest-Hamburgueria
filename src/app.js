@@ -4,10 +4,7 @@ import https from "https";
 import cors from "cors";
 import router from "./rotas/routes.js";
 import * as dotenv from "dotenv";
-import { openDb }  from "./infra/configDB.js";
-import { tablePedido } from "../src/controllers/controllersPedidos.js";
-import {tableCardapio } from "../src/controllers/controllersCardapio.js";
-import { tableClientes } from "../src/controllers/controllersClientes.js";
+import DatabaseMetodosClientes from "./DAO/DatabaseMetodosClientes.js";
 
 dotenv.config();
 // openDb();
@@ -19,6 +16,7 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 
+DatabaseMetodosClientes.createTableClientes();
 
 
 app.listen(port, () => {

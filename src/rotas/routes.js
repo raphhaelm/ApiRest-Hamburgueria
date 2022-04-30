@@ -1,16 +1,15 @@
 import { Router } from "express";
-import { insertPedido, sltPedidos, sltPedido, uptPedido, delPedido } from "../controllers/controllersPedidos.js";
+import{ inserirCliente, uptCliente, sltClientes, sltClienteId, delCliente } from "../controllers/controllersClientes.js";
 const router = Router();
 
 router.get('/', (req, res) => {
-  res.send(`Gostaria de fazer um pedido? `)
+  res.send(`Usuário Cadastrado`)
 });
 
-
-router.get("/pedidos", sltPedidos);
-router.get("/pedido", sltPedido);
-router.post("/pedido", insertPedido);
-router.put("/pedido", uptPedido);
-router.delete("/pedido", delPedido);
+router.get("/clientes", sltClientes);
+router.get("/cliente/:id", sltClienteId);
+router.post("/cliente", inserirCliente);
+router.put("/cliente/:id", uptCliente);
+router.delete("/cliente/:id", delCliente);
 
 export default router;

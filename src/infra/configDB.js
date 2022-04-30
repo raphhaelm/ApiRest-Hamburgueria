@@ -1,9 +1,8 @@
-import sqlite3 from 'sqlite3'
-import { open } from 'sqlite'
+import sqlite3 from "sqlite3"; 
+import { dirname } from "path"; 
+import { fileURLToPath } from "url";
+sqlite3.verbose()
+const filePath = dirname(fileURLToPath(import.meta.url)) + "/database.db"
+const Database = new sqlite3.Database(filePath)  
 
-export async function openDb() {
-    return open({
-        filename: './database.db',
-        driver: sqlite3.Database
-    })
-};
+export default Database

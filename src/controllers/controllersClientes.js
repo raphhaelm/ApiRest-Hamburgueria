@@ -1,62 +1,56 @@
-import { openDb } from "../infra/configDB.js";
+import DatabaseMetodosClientes from "../DAO/DatabaseMetodosClientes.js"
+import ClientesModels from "../models/clientesModels.js"
 
-export async function tableClientes () {
-    const cliente = `CREATE TABLE IF NOT EXISTS Cliente
-                    (id INTEGER PRIMARY KEY,
-                    nome TEXT,
-                    telefone VARCHAR,
-                    email VARCHAR)`;
 
-    openDb().then(db => {
-        db.exec(cliente)
-    })
+export async function inserirCliente(req, res) {
+    try {
+        const table = await DatabaseMetodosClientes.createTableClientes()
+        const cliente = new ClientesModels(...Object.values(req.body))
+        const response = await DatabaseMetodosClientes.inserirCliente(cliente)
+        res.status(201).json(response)
+    } catch (e) {
+        res.status(400).json({erro:e.message})
+        }
+
+        
 };
-export async function insertCliente(req, res){
-    let cliente = req.body;
-    openDb().then(db => {
-        db.run(`INSERT INTO cliente
-        (nome, telefone, preço)
-        VALEUS (?, ?, ?)`,
-            [cliente.nome, cliente.telefone, cliente.email]
-        )
-    })
-    res.json({
-        "statusCode": 200
-    })
-}
+
 export async function uptCliente(req, res) {
-    let cliente = req.body;
-    openDb().then(db => {
-        db.run(`UPDATE cliente
-        SET nome=?, produto=?, preco=?
-        WHERE id=?`,
-        [cliente.nome, cliente.telefone, cliente.email, cliente.id]
-        )
-    });
-    res.json({
-        "statusCode": 200
-    })
-}
-export async function sltCliente(res, req) {
-    let id = req.body.id
-    openDb().then(db => {
-        db.get(`SELECT * FROM Cliente WHERE id=?`, [id])
-        .then(cliente => res.json(cliente))
-    });
-}
-export async function sltClientes(req, res) {
-    openDb().then(db => {
-        db.all(`SELECT * FROM Cliente`)
-        .then(cliente => res.json(cliente))
-    });
-}
-export async function delCliente(req, res) {
-    let id = req.body.id;
-    openDb().then(db => {
-        db.run(`DELETE FROM Cliente WHERE id=?`, [id])
-    });
-    req.json({
-        "statuscode": 200
-    })
+try {
+    const cliente = req.body;
+    const response = await DatabaseMetodosClientes.updateClienteId(cliente, req.params.id)
+    res.status(200).json(response)
+
+} catch (e) {
+    res.status(400).json({erro:e.message})
 }
 
+    
+}
+
+export async function sltClientes(req, res) {
+    try {
+        const response = await DatabaseMetodosClientes.selecionarClientes() 
+        res.status(200).json(response)
+    } catch (e) {
+        res.status(400).json({erro:e.message})
+    }
+}
+
+export async function sltClienteId(req, res) {
+    try {
+        const response = await DatabaseMetodosClientes.selecionarClienteId(req.params.id) 
+        res.status(200).json(response)
+    } catch (e) {
+        res.status(400).json({erro:e.message})
+    }
+}
+
+export async function delCliente(req, res) {
+    try {
+        const response = await DatabaseMetodosClientes.deleteCliente(req.params.id) 
+        res.status(200).json(response)
+    } catch (e) {
+        res.status(400).json({erro:e.message})
+    }
+}
