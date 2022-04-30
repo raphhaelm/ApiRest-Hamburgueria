@@ -7,8 +7,7 @@ export async function testApi(req, res){
     } catch (e) {
         res.status(400).json(e)
     }
-}
-
+};
 export async function insertFornecedor(req, res) {
     try {
         const tabela = await DatabaseMetodosFornecedores.tableFornecedores();
@@ -18,8 +17,7 @@ export async function insertFornecedor(req, res) {
     } catch (e) {
         res.status(400).json(e.message);
     }
-}
-
+};
 export async function uptFornecedor(req, res) {
     try {
         const fornecedor = req.body;
@@ -28,8 +26,7 @@ export async function uptFornecedor(req, res) {
     } catch (e) {
         res.status(400).json(e.message)
     }
-}
-
+};
 export async function sltFornecedor(req, res) {
     
     try {
@@ -38,8 +35,7 @@ export async function sltFornecedor(req, res) {
     } catch (e) {
         res.status(400).json(e.message)
     };
-}
-
+};
 export async function sltFornecedores(req, res) {
     try {
         const response = await DatabaseMetodosFornecedores.selecionarFornecedores();
@@ -47,8 +43,7 @@ export async function sltFornecedores(req, res) {
     } catch (e) {
         res.status(400).json(e.message)
     };
-}
-
+};
 export async function delFornecedor(req, res){
     try{
         const response = await DatabaseMetodosFornecedores.deletaFornecedor(req.params.id);

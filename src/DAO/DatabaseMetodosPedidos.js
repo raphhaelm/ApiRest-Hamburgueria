@@ -1,5 +1,4 @@
 import Database from "../infra/configDB.js";
-import { resolve } from "path";
 
 class DatabaseMetodos {
     static tablePedido() {
@@ -18,7 +17,6 @@ class DatabaseMetodos {
             })
         })
     };
-
     static inserirPedido(pedido) {
         const query = `INSERT INTO Pedido (nome, produto, preco) VALUES ( ?, ?, ?)`;
         const body = Object.values(pedido);
@@ -31,7 +29,7 @@ class DatabaseMetodos {
                 }
             })
         })
-    }
+    };
     static updatePedidoId(pedido, id) {
         const query = `UPDATE Pedido SET (nome, produto, preco) = (?,?,?) WHERE id = ?`;
         const body = Object.values(pedido)
@@ -44,8 +42,7 @@ class DatabaseMetodos {
                 }
             })
         })
-    }
-
+    };
     static selecionarPedido(id) {
         const query = `SELECT * FROM Pedido WHERE id = ?`;
         return new Promise((resolve, reject) => {
@@ -57,7 +54,7 @@ class DatabaseMetodos {
                 }
             })
         })
-    }
+    };
     static selecionarPedidos() {
         const query = `SELECT * FROM Pedido`;
         return new Promise((resolve, reject) => {
@@ -69,7 +66,7 @@ class DatabaseMetodos {
                 }
             })
         })
-    }
+    };
     static deletaPedido(id) {
         const query = `DELETE From Pedido WHERE id = ?`
         return new Promise((resolve, reject) => {
@@ -81,7 +78,7 @@ class DatabaseMetodos {
                 }
             })
         })
-    }
+    };
 }
 
 export default DatabaseMetodos;

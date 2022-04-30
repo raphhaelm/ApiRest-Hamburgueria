@@ -15,8 +15,7 @@ export async function insertPedido(req, res) {
     } catch (e) {
         res.status(400).json({ erro: e.message });
     }
-}
-
+};
 export async function uptPedido(req, res) {
     try {
         const pedido = req.body;
@@ -27,8 +26,7 @@ export async function uptPedido(req, res) {
     } catch (e) {
         res.status(400).json(e.message)
     }
-}
-
+};
 export async function sltPedido(req, res) {
     
     try {
@@ -37,8 +35,7 @@ export async function sltPedido(req, res) {
     } catch (e) {
         res.status(400).json({ erro: e.message })
     };
-}
-
+};
 export async function sltPedidos(req, res) {
     try {
         const response = await DatabaseMetodos.selecionarPedidos();
@@ -46,8 +43,7 @@ export async function sltPedidos(req, res) {
     } catch (e) {
         res.status(400).json({ erro: e.message })
     };
-}
-
+};
 export async function delPedido(req, res){
     try{
         const response = await DatabaseMetodos.deletaPedido(req.params.id);
