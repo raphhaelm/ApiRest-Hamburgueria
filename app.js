@@ -5,9 +5,11 @@ import cors from "cors";
 import routerPedido from "./src/rotas/routesPedido.js";
 import routerClientes from "./src/rotas/routesClientes.js";
 import routerFornecedores from "./src/rotas/routesFornecedores.js"
+import routerCardapio from "./src/rotas/CardapioRoutes.js";
 import * as dotenv from "dotenv";
 import DatabaseMetodosClientes from "./src/DAO/DatabaseMetodosClientes.js"
 import DatabaseMetodosFornecedores from "./src/DAO/DatabaseMetodosFornecedores.js";
+import DatabaseMetodosCardapio from "./src/DAO/DatabaseMetodosCardapio.js"
 
 dotenv.config();
 
@@ -20,9 +22,12 @@ app.use(express.json());
 app.use(routerPedido);
 app.use(routerClientes);
 app.use(routerFornecedores);
+app.use(routerCardapio);
+
 
 DatabaseMetodosClientes.createTableClientes();
 DatabaseMetodosFornecedores.tableFornecedores();
+DatabaseMetodosCardapio.createTableCardapio();
 
 app.listen(port, () => {
   console.log(`
