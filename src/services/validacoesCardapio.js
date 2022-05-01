@@ -1,3 +1,5 @@
+//import testCardapio from "../test/Cardapio.test.js"
+
 class ValidacoesCardapio {
 
     static validaProduto(produto) {
