@@ -33,6 +33,6 @@
     "sqlite3": "^5.0.6"
   },
   "devDependencies": {
-    "jest": "^28.0.1"
+    "jest": "^28.0.3"
   }
 }
