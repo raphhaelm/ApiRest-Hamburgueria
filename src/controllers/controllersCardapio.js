@@ -5,7 +5,7 @@ import ValidacoesCardapio from "../services/validacoesCardapio.js"
 export async function inserirProduto(req, res) {
     try {
         if (ValidacoesCardapio.validaProduto(req.body.produto) && ValidacoesCardapio.ValidaPreco(req.body.preco)) {
-
+            const tabela = await DatabaseMetodosCardapio.createTableCardapio();
             const produto = new CardapioModels(...Object.values(req.body))
             const response = await DatabaseMetodosCardapio.inserirProduto(produto)
             res.status(201).json(response)
@@ -14,6 +14,26 @@ export async function inserirProduto(req, res) {
             throw new Error("Requisição está fora dos padrões")
 
         }
+
+    } catch (e) {
+        res.status(400).json({ erro: e.message })
+    }
+
+};
+
+export async function updateCardapio(req, res) {
+    try {
+        if (ValidacoesCardapio.validaProduto(req.body.produto) && ValidacoesCardapio.ValidaPreco(req.body.preco)) {
+            
+            const produto = new CardapioModels(req.params.id, req.body.produto, req.body.preco)
+
+            const response = await DatabaseMetodosCardapio.uptCardapio(produto, req.params.id)
+            res.status(201).json(response)
+
+        } else {
+            throw new Error("Requisição está fora dos padrões")
+        }
+
 
     } catch (e) {
         res.status(400).json({ erro: e.message })
@@ -22,32 +42,6 @@ export async function inserirProduto(req, res) {
 
 };
 
-export async function uptCardapio(req, res) {
-    try {
-        if (ValidacoesCardapio.validaProduto(req.body.produto) && ValidacoesCardapio.ValidaPreco(req.body.preco)) {
-
-            const produto = new CardapioModels(...Object.values(req.body))
-            const response = await DatabaseMetodosCardapio.inserirProduto(produto)
-            res.status(201).json(response)
-
-        } else {
-            throw new Error("Requisição está fora dos padrões")
-
-        }
-
-
-
-        const produto = req.body;
-        const response = await DatabaseMetodosCardapio.updateProduto(produto, req.params.id)
-        res.status(200).json(response)
-
-    } catch (e) {
-        res.status(400).json({ erro: e.message })
-    }
-
-
-}
-
 export async function sltProdutos(req, res) {
     try {
         const response = await DatabaseMetodosCardapio.selecionarProdutos()
@@ -55,7 +49,7 @@ export async function sltProdutos(req, res) {
     } catch (e) {
         res.status(400).json({ erro: e.message })
     }
-}
+};
 
 export async function sltProduto(req, res) {
     try {
@@ -64,7 +58,7 @@ export async function sltProduto(req, res) {
     } catch (e) {
         res.status(400).json({ erro: e.message })
     }
-}
+};
 
 export async function delProduto(req, res) {
     try {
@@ -73,6 +67,6 @@ export async function delProduto(req, res) {
     } catch (e) {
         res.status(400).json({ erro: e.message })
     }
-}
+};
 
 

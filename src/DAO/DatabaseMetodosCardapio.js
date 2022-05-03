@@ -28,7 +28,7 @@ class DatabaseMetodosCardapio {
 
     static inserirProduto(produto) {
         const query = `INSERT INTO Cardapio VALUES (?, ? , ?)`
-       
+        
         const body = Object.values(produto)
         return new Promise((resolve, reject) => {
             Database.run(query, [...body], (e) => {
@@ -39,13 +39,14 @@ class DatabaseMetodosCardapio {
                 }
             })
         })
-    }
+    };
 
-    static updateProduto(produto, id) {
-        const query = `UPDATE cardapio SET (produto, preco) = (? , ?) WHERE id_produto=?`;
+    static uptCardapio(produto, id) {
+        const query = `UPDATE cardapio SET (produto, preco) = (? , ?) WHERE id_produto = ?`;
         const body = Object.values(produto)
+        console.log(body)
         return new Promise((resolve, reject) => {
-            Database.run(query, [...body, id], (e, result) => {
+            Database.run(query, [produto.produto, produto.preco, id], (e, result) => {
                 if (e) {
                     reject(e.message)
                 } else {
@@ -58,7 +59,7 @@ class DatabaseMetodosCardapio {
 
 
     static selecionarProduto(id) {
-        const query = `SELECT * FROM Cardapio WHERE id_produto=?`;
+        const query = `SELECT * FROM Cardapio WHERE id_produto = ?`;
         return new Promise((resolve, reject) => {
             Database.get(query, id, (e, result) => {
                 if (e) {
@@ -68,7 +69,7 @@ class DatabaseMetodosCardapio {
                 }
             })
         })
-    }
+    };
 
     static selecionarProdutos() {
         const query = `SELECT * FROM Cardapio `

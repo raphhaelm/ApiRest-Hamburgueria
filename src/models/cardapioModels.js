@@ -1,7 +1,7 @@
 class CardapioModels {
-    constructor(id_produto, nome, preco){
+    constructor(id_produto, produto, preco){
         this.id_produto = id_produto
-        this.nome = nome
+        this.produto = produto
         this.preco = preco
     }
 } 
