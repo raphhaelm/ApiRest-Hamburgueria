@@ -15,7 +15,6 @@ ____
 ____
 
 ![dev Burger_Entidades](https://user-images.githubusercontent.com/94863711/166570095-0e9e52b6-32e4-4d66-8e42-7751c450b13c.png)
-![apresentacao](./src/utils/2.png)
 
 ___
 #### Descrição:
