@@ -4,7 +4,7 @@ import https from "https";
 import cors from "cors";
 import routerClientes from "./src/rotas/routesClientes.js";
 import routerFornecedores from "./src/rotas/routesFornecedores.js";
-import routerCardapio from "./src/rotas/CardapioRoutes.js";
+import routerCardapio from "./src/rotas/routesCardapio.js";
 import routerPedido from "./src/rotas/routesPedido.js";
 import * as dotenv from "dotenv";
 import DatabaseMetodosClientes from "./src/DAO/DatabaseMetodosClientes.js"
