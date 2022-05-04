@@ -1,10 +1,10 @@
 import DatabaseMetodos from "../DAO/DatabaseMetodosPedidos.js"
 import PedidosModel from "../models/pedidosModels.js"
-import ValidacoesPedidos from "../services/validacoesPedidos.js";
+import ValidacoesDePedidos from "../services/validacoespedido.js";
 
 export async function insertPedido(req, res) {
     try {
-        if (ValidacoesPedidos.validaNome(req.body.nome) && ValidacoesPedidos.validaPedido(req.body.produto) && ValidacoesPedidos.validaPreco(req.body.preco)) {
+        if (ValidacoesDePedidos.validaNome(req.body.nome) && ValidacoesDePedidos.validaPedido(req.body.produto) && ValidacoesDePedidos.validaPreco(req.body.preco)) {
             const pedido = new PedidosModel(...Object.values(req.body));
             const response = await DatabaseMetodos.inserirPedido(pedido)
             res.status(201).json(response)
@@ -17,7 +17,7 @@ export async function insertPedido(req, res) {
 };
 export async function uptPedido(req, res) {
     try {
-        if (ValidacoesPedidos.validaNome(req.body.nome) && ValidacoesPedidos.validaPedido(req.body.produto) && ValidacoesPedidos.validaPreco(req.body.preco)) {
+        if (ValidacoesDePedidos.validaNome(req.body.nome) && ValidacoesDePedidos.validaPedido(req.body.produto) && ValidacoesDePedidos.validaPreco(req.body.preco)) {
             const pedido = req.body;
             const id = req.params.id;
             const response = await DatabaseMetodos.updatePedidoId(pedido, id)

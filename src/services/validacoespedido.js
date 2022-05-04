@@ -1,4 +1,5 @@
-class ValidacoesPedidos {
+class ValidacoesDePedidos {
+    
     static validaNome(str) {
         if (str.length >= 3) {
             return true
@@ -23,4 +24,4 @@ class ValidacoesPedidos {
     };
 };
 
-export default ValidacoesPedidos;
+export default ValidacoesDePedidos;
