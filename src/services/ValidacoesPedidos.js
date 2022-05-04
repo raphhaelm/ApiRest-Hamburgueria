@@ -22,4 +22,5 @@ class ValidacoesPedidos {
         }
     };
 };
-export default ValidacoesPedidos
+
+export default ValidacoesPedidos;
