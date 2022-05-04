@@ -23,7 +23,13 @@ A aplicação utiliza o banco de dados Sqlite.
 Escolhemos a arquitetura MVC para estruturar nosso código.*
 ____
 #### Ferramentas utilizadas:
-*Durante o desenvolvimento da aplicação, utilizamos o framwork Express, o banco Sqlite e a linguagem JavaScript com NodeJS.*
+• [Express](https://www.npmjs.com/package/express)
+
+• [Sqlite](https://www.sqlite.org/docs.html )
+
+• [JavaScript_NodeJS](https://nodejs.org/en/docs/guides/)
+
+
 ____
 #### Dependências:
 ```js
@@ -56,7 +62,69 @@ ____
 
 Nossa API conta com 4 Entidades: Cardapio, Clientes, Fornecedores e Pedidos.
 
-### Clientes:
+## Cardapio:
+Ver todo os itens do cardapio do banco de dados:
+Método HTTP Get no caminho "url da api" + /cardapio
+
+
+### Buscar produto do cardápio por id:
+Método HTTP Get no caminho "url da api" + /cardapio/:id
+
+``` js:
+{
+	"id_produto": 1,
+	"produto": "X-Bacon",
+	"preco": 16
+}
+
+```
+
+### Adicionar novo produto no cardápio:
+Método HTTP Post no caminho "url da api" + /cardapio com os dados necessários para o seu banco de dados. Os campos para adicionar um novo item são: id_produto, produto e preco (O Produto deve conter mais de 5 letras e o preco deve
+conter apenas numéros)
+
+``` js:
+Sucesso:
+{
+	"message": "Novo produto cadastrado"
+}
+
+Erro:
+{
+	"erro": "Requisição está fora dos padrões"
+}
+```
+
+
+
+### Alterar cardápio:
+
+Método HTTP Put no caminho "url da api" + /cardapio/:id passando os valores que deseja alterar especificando seus devidos campos. O preco deve conter apenas números e o pedido deve conter mais de 5 letras.
+
+
+``` js:
+Sucesso: 
+{
+	"message": "Cardapio alterado com sucesso!"
+}
+Erro: 
+{
+	"erro": "Requisição está fora dos padrões"
+}
+
+```
+
+### Deletar item no cardápio:
+Método HTTP Delete no caminho "url da api" + /cardapio/:id.
+
+Resposta: 
+``` js:
+{
+	"message": "Produto deletado com sucesso"
+}
+```
+
+## Clientes:
 Ver todos os clientes do banco de dados:
 Método HTTP Get no caminho "url da api" + /clientes
 
@@ -78,7 +146,23 @@ Método HTTP Put no caminho "url da api" + /cliente/:id passando os valores que 
 Método HTTP Delete no caminho "url da api" + /cliente/:id.
 
 
-### Pedidos: 
+## Fornecedores
+
+Ver todos os fornecedores do banco de dados:
+Método HTTP Get no caminho "url da api" + /fornecedores
+
+### Buscar fornecedor por id:
+Método HTTP Get no caminho "url da api" + /fornecedores/:id
+
+
+### Adicionar novo fornecedor:
+Método HTTP Post no caminho "url da api" + /pedido com os dados necessários para o seu banco de dados. Os campos para adicionar um novo pedido são: id, nome, ramo, cnpj. 
+
+
+### Deletar um fornecedor:
+Método HTTP Delete no caminho "url da api" + /fornecedor/:id.
+
+## Pedidos: 
 Ver todos os pedidos do banco de dados:
 Método HTTP Get no caminho "url da api" + /pedidos
 
@@ -98,6 +182,10 @@ Método HTTP Put no caminho "url da api" + /pedido/:id passando os valores que d
 
 ### Deletar um pedido: 
 Método HTTP Delete no caminho "url da api" + /pedido/:id.
+
+
+
+
 
 ____
 #### Versão:
