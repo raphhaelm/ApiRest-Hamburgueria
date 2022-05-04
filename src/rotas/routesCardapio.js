@@ -6,7 +6,7 @@ routerCardapio.get('/', (req, res) => {
   res.send(` <h1>Api Rest - Dev Burger. </h1>
   <b>A sua fome é o nosso bug e o nosso foco é desenvolver o seu burger</b>
   
-  <img src="/src/utils/1.png">
+  🍔💖
   `)
 });
 
