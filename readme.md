@@ -123,7 +123,7 @@ Resposta:
 	"message": "Produto deletado com sucesso"
 }
 ```
-
+___
 ## Clientes:
 Ver todos os clientes do banco de dados:
 Método HTTP Get no caminho "url da api" + /clientes
@@ -145,7 +145,7 @@ Método HTTP Put no caminho "url da api" + /cliente/:id passando os valores que 
 ### Deletar um cliente: 
 Método HTTP Delete no caminho "url da api" + /cliente/:id.
 
-
+___
 ## Fornecedores
 
 Ver todos os fornecedores do banco de dados:
@@ -161,7 +161,7 @@ Método HTTP Post no caminho "url da api" + /pedido com os dados necessários pa
 
 ### Deletar um fornecedor:
 Método HTTP Delete no caminho "url da api" + /fornecedor/:id.
-
+___
 ## Pedidos: 
 Ver todos os pedidos do banco de dados:
 Método HTTP Get no caminho "url da api" + /pedidos
@@ -182,10 +182,6 @@ Método HTTP Put no caminho "url da api" + /pedido/:id passando os valores que d
 
 ### Deletar um pedido: 
 Método HTTP Delete no caminho "url da api" + /pedido/:id.
-
-
-
-
 
 ____
 #### Versão:
