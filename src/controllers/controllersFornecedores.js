@@ -17,7 +17,7 @@ export async function insertFornecedor(req, res) {
             const response = await DatabaseMetodosFornecedores.inserirFornecedor(fornecedor)
             res.status(201).json(response)
         } else {
-            throw new Error("ERRO! Nome e ramo precisam ter 3 ou + caracteres e cnpj precisa ter 14 números.")
+            throw new Error("ERRO! Nome e ramo precisam ter 3 ou + caracteres e cnpj precisa estar entre aspas e ter 14 números.")
         }
     } catch (e) {
         res.status(400).json(e.message);
