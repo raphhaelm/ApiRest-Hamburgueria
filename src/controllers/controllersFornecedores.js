@@ -1,5 +1,5 @@
 import DatabaseMetodosFornecedores from "../DAO/DatabaseMetodosFornecedores.js"
-import FornecedoresModel from "../models/FornecedoresModel.js"
+import FornecedoresModel from "../models/fornecedoresModel.js"
 import { ValidacoesFornecedores } from "../services/validacoesFornecedores.js";
 
 export async function testApi(req, res){
