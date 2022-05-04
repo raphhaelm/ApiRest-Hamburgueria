@@ -1,4 +1,5 @@
 export class ValidacoesFornecedores {
+
     static validaNomeFornecedor(nome) {
         if (nome.length >= 3) {
             return true
