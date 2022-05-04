@@ -11,7 +11,7 @@ export async function testApi(req, res){
 };
 export async function insertFornecedor(req, res) {
     try {
-        if (ValidacoesFornecedores.validaInsertAndUpdate(req.body.nome, req.body.ramo, req.body.cnpj)) {
+        if (ValidacoesFornecedores.validaNomeFornecedor(req.body.nome) && ValidacoesFornecedores.validaRamoFornecedor(req.body.ramo) && ValidacoesFornecedores.validaCnpjFornecedor(req.body.cnpj)) {
             const tabela = await DatabaseMetodosFornecedores.tableFornecedores();
             const fornecedor = new FornecedoresModel(...Object.values(req.body));
             const response = await DatabaseMetodosFornecedores.inserirFornecedor(fornecedor)
@@ -25,7 +25,7 @@ export async function insertFornecedor(req, res) {
 };
 export async function uptFornecedor(req, res) {
     try {
-        if (ValidacoesFornecedores.validaInsertAndUpdate(req.body.nome, req.body.ramo, req.body.cnpj)) {
+        if (ValidacoesFornecedores.validaNomeFornecedor(req.body.nome) && ValidacoesFornecedores.validaRamoFornecedor(req.body.ramo) && ValidacoesFornecedores.validaCnpjFornecedor(req.body.cnpj)) {
             const fornecedor = req.body;
             const response = await DatabaseMetodosFornecedores.updateFornecedorId(fornecedor, req.params.id)
             res.status(200).json(response)
