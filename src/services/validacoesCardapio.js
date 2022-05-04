@@ -7,7 +7,7 @@ class ValidacoesCardapio {
         } else {
             return false
         }
-    }
+    };
     static ValidaPreco(preco) {
         const precoNum = parseInt(preco)
         if (precoNum == preco) {
@@ -15,8 +15,8 @@ class ValidacoesCardapio {
         } else {
             return false
         }
-    }
+    };
 
-}
+};
 
 export default ValidacoesCardapio

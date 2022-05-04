@@ -3,7 +3,7 @@ import { testApi, insertFornecedor,sltFornecedor, sltFornecedores, uptFornecedor
 
 const routerFornecedores = Router();
 
-routerFornecedores.get('/fornecedor', testApi);
+// routerFornecedores.get('/fornecedor', testApi);
 routerFornecedores.post('/fornecedor', insertFornecedor);
 routerFornecedores.get('/fornecedor/:id', sltFornecedor);
 routerFornecedores.get('/fornecedores', sltFornecedores);

@@ -20,6 +20,10 @@
     "url": "https://github.com/raphhaelm/ProjetoFinalModulo4/issues"
   },
   "homepage": "https://github.com/raphhaelm/ProjetoFinalModulo4#readme",
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.5.0"
+  },
   "dependencies": {
     "chalk": "^5.0.1",
     "cors": "^2.8.5",
