@@ -1,6 +1,6 @@
 import DatabaseMetodos from "../DAO/DatabaseMetodosPedidos.js"
-import PedidosModel from "../models/modelsPedidos.js"
-import ValidacoesPedidos from "../services/ValidacoesPedidos.js";
+import PedidosModel from "../models/pedidosModels.js"
+import ValidacoesPedidos from "../services/validacoesPedidos.js";
 
 export async function insertPedido(req, res) {
     try {

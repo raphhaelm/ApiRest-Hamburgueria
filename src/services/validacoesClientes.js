@@ -7,15 +7,14 @@ class ValidacoesClientes {
         } else {
             return false
         }
-    }
-
+    };
     static validaEmail(email){
         if( email.length >= 8 ){
             return true
         } else {
             return false
         }
-    }
-}
+    };
+};
 
 export default ValidacoesClientes
