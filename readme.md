@@ -37,6 +37,11 @@ ____
     "sqlite3": "^5.0.6"
   }
 ```
+Para iniciar este projeto você pode copiar o código abaixo e colar no terminal (Crtl + shift + v), para fazer o clone deste repositório e instalar as dependencias.
+
+```
+git clone git@github.com:raphhaelm/ProjetoFinalModulo4.git && cd ProjetoFinalModulo4 && npm install cors && npm install express && npm install sqlite3 && npm install sqlite && npm install path  
+```
 ____
 ### Depêndecias de desenvolvimento:
 ```js 
