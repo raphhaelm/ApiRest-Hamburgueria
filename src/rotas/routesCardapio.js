@@ -3,7 +3,8 @@ import { inserirProduto, updateCardapio, sltProdutos, sltProduto, delProduto  } 
 const routerCardapio = Router();
 
 routerCardapio.get('/', (req, res) => {
-  res.send(`Escolha o seu hamburger`)
+  res.send(`Api Rest - Dev Burger. 
+  A sua fome é o nosso bug e o nosso foco é desenvolver o seu burger`)
 });
 
 routerCardapio.get("/cardapio", sltProdutos);
