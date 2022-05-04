@@ -4,7 +4,7 @@ const routerCardapio = Router();
 
 routerCardapio.get('/', (req, res) => {
   res.send(` <h1>Api Rest - Dev Burger. </h1>
-  <b>A sua fome é o nosso bug e o nosso foco é desenvolver o seu burger</b>
+  <b><h3>A sua fome é o nosso bug e o nosso foco é desenvolver o seu burger</h3></b>
   
   🍔💖
   `)
