@@ -23,7 +23,7 @@ A aplicação utiliza o banco de dados Sqlite.
 Escolhemos a arquitetura MVC para estruturar nosso código.*
 ____
 #### Ferramentas utilizadas:
-• framework [Express](https://www.npmjs.com/package/express)
+• [Express](https://www.npmjs.com/package/express)
 
 • [Sqlite](https://www.sqlite.org/docs.html )
 
@@ -75,7 +75,20 @@ Método HTTP Get no caminho "url da api" + /cardapio/:id
 ```
 
 ### Adicionar novo produto no cardápio:
-Método HTTP Post no caminho "url da api" + /cardapio com os dados necessários para o seu banco de dados. Os campos para adicionar um novo item são: id_produto, produto e preco
+Método HTTP Post no caminho "url da api" + /cardapio com os dados necessários para o seu banco de dados. Os campos para adicionar um novo item são: id_produto, produto e preco (O Produto deve conter mais de 5 letras e o preco deve
+conter apenas numéros)
+
+``` js:
+Sucesso:
+{
+	"message": "Novo produto cadastrado"
+}
+
+Erro:
+{
+	"erro": "Requisição está fora dos padrões"
+}
+```
 
 
 
