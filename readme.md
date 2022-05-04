@@ -1,28 +1,28 @@
-# Projeto de encerramento de módulo: CRUD - API #
+# Projeto de encerramento de módulo: CRUD - API # 🍔 💖
 ____
-#### Proposta:
+#### 📝Proposta:
  *Nossa Squad foi escalada para o desenvolvimento de uma api Rest em NodeJs. Escolhemos um tema e a partir dele definimos as entidades do projeto. Iniciamos a produção da nossa aplicação.*
 
-##### Squad: 
+##### 🌐Squad: 
 
 - _[Annanda Santos](https://github.com/asnts)_
 - _[César Freitas](https://github.com/cesarfreitax)_
 - _[Eduardo Fortes](https://github.com/EduardoF0rtes)_ 
 - _[Rapha Marques](https://github.com/raphhaelm)_.
 ____
-##### Tema: *Hamburgueria*.
+##### Tema: 🍔 *Hamburgueria*.
 
 ____
 
 ![dev Burger_Entidades](https://user-images.githubusercontent.com/94863711/166570095-0e9e52b6-32e4-4d66-8e42-7751c450b13c.png)
 
 ___
-#### Descrição:
+#### 🗒️Descrição:
 *Desenvolvemos a aplicação que simula uma hamburgueria, utilizando esta aplicação é possivel, organizar sua lista de clientes, criar um cardapio, cadastrar fornecedores e anotar pedidos.
 A aplicação utiliza o banco de dados Sqlite.
 Escolhemos a arquitetura MVC para estruturar nosso código.*
 ____
-#### Ferramentas utilizadas:
+#### 🪛Ferramentas utilizadas:
 • [Express](https://www.npmjs.com/package/express)
 
 • [Sqlite](https://www.sqlite.org/docs.html )
@@ -31,7 +31,7 @@ ____
 
 
 ____
-#### Dependências:
+#### ⚙️Dependências:
 ```js
 "dependencies": {
     "cors": "^2.8.5",
@@ -46,10 +46,10 @@ ____
 Para iniciar este projeto você pode copiar o código abaixo e colar no terminal (Crtl + shift + v), para fazer o clone deste repositório e instalar as dependencias.
 
 ```
-git clone git@github.com:raphhaelm/ProjetoFinalModulo4.git && cd ProjetoFinalModulo4 && npm install cors && npm install express && npm install sqlite3 && npm install sqlite && npm install path  
+git clone https://github.com/raphhaelm/ProjetoFinalModulo4.git && cd ProjetoFinalModulo4 && npm install consign && npm install express && npm install all moment && npm install sqlite3 && npm install cors && npm install https && npm install path && npm install sqlite
 ```
 ____
-### Depêndecias de desenvolvimento:
+### ⚙️Depêndecias de desenvolvimento:
 ```js 
 "devDependencies": {
     "dotenv": "^16.0.0",
@@ -58,16 +58,23 @@ ____
   }
   ```
 ____
-## Rotas:
+## Para utilizar a aplicação 
+
+```js
+npm start
+```
+
+____
+# ➡️Rotas:
 
 Nossa API conta com 4 Entidades: Cardapio, Clientes, Fornecedores e Pedidos.
 
-## Cardapio:
+## 🗒️Cardapio:
 Ver todo os itens do cardapio do banco de dados:
 Método HTTP Get no caminho "url da api" + /cardapio
 
 
-### Buscar produto do cardápio por id:
+### 🔎Buscar produto do cardápio por id:
 Método HTTP Get no caminho "url da api" + /cardapio/:id
 
 ``` js:
@@ -79,7 +86,7 @@ Método HTTP Get no caminho "url da api" + /cardapio/:id
 
 ```
 
-### Adicionar novo produto no cardápio:
+### ➕Adicionar novo produto no cardápio:
 Método HTTP Post no caminho "url da api" + /cardapio com os dados necessários para o seu banco de dados. Os campos para adicionar um novo item são: id_produto, produto e preco (O Produto deve conter mais de 5 letras e o preco deve
 conter apenas numéros)
 
@@ -94,10 +101,7 @@ Erro:
 	"erro": "Requisição está fora dos padrões"
 }
 ```
-
-
-
-### Alterar cardápio:
+### ↩️Alterar cardápio:
 
 Método HTTP Put no caminho "url da api" + /cardapio/:id passando os valores que deseja alterar especificando seus devidos campos. O preco deve conter apenas números e o pedido deve conter mais de 5 letras.
 
@@ -114,7 +118,7 @@ Erro:
 
 ```
 
-### Deletar item no cardápio:
+### ❌Deletar item no cardápio:
 Método HTTP Delete no caminho "url da api" + /cardapio/:id.
 
 Resposta: 
@@ -124,68 +128,75 @@ Resposta:
 }
 ```
 ___
-## Clientes:
+## 🚹Clientes:
 Ver todos os clientes do banco de dados:
 Método HTTP Get no caminho "url da api" + /clientes
 
 
-### Buscar cliente por id: ###
+### 🔎Buscar cliente por id: ###
 Método HTTP Get no caminho "url da api" + /clientes/:id
 
 
 
-### Adicionar novo cliente: 
+### ➕Adicionar novo cliente: 
 Método HTTP Post no caminho "url da api" + /cliente com os dados necessários para o seu banco de dados. Os campos para adicionar um novo cliente são: nome, telefone e email.
 
 
-### Alterar o cadastro de um cliente: 
+### 📝Alterar o cadastro de um cliente: 
 Método HTTP Put no caminho "url da api" + /cliente/:id passando os valores que deseja alterar especificando seus devidos campos.
 
 
-### Deletar um cliente: 
+### ❌Deletar um cliente: 
 Método HTTP Delete no caminho "url da api" + /cliente/:id.
 
 ___
-## Fornecedores
+## 🚛Fornecedores
 
 Ver todos os fornecedores do banco de dados:
 Método HTTP Get no caminho "url da api" + /fornecedores
 
-### Buscar fornecedor por id:
+### 🔎Buscar fornecedor por id:
 Método HTTP Get no caminho "url da api" + /fornecedores/:id
 
 
-### Adicionar novo fornecedor:
+### ➕Adicionar novo fornecedor:
 Método HTTP Post no caminho "url da api" + /pedido com os dados necessários para o seu banco de dados. Os campos para adicionar um novo pedido são: id, nome, ramo, cnpj. 
 
 
-### Deletar um fornecedor:
+### ❌Deletar um fornecedor:
 Método HTTP Delete no caminho "url da api" + /fornecedor/:id.
 ___
-## Pedidos: 
+## 📝Pedidos: 
 Ver todos os pedidos do banco de dados:
 Método HTTP Get no caminho "url da api" + /pedidos
 
 
-### Buscar pedido por id: 
+### 🔎Buscar pedido por id: 
 Método HTTP Get no caminho "url da api" + /pedido/:id
 
 
 
-### Adicionar novo pedido: 
+### ➕Adicionar novo pedido: 
 Método HTTP Post no caminho "url da api" + /pedido com os dados necessários para o seu banco de dados. Os campos para adicionar um novo pedido são: nome, produto e preco. O preco deve conter apenas números.
 
 
-### Alterar um pedido no banco de dados: 
+### ↩️Alterar um pedido no banco de dados: 
 Método HTTP Put no caminho "url da api" + /pedido/:id passando os valores que deseja alterar especificando seus devidos campos.
 
 
-### Deletar um pedido: 
+### ❌Deletar um pedido: 
 Método HTTP Delete no caminho "url da api" + /pedido/:id.
+
+____
+#### 🌐Heroku:
+Para acessar a aplicação online click aqui: 
+
+[Heroku.](https://apirestdevburger.herokuapp.com/)
 
 ____
 #### Versão:
 ```js 
 node: v16.14.2
-
+npm: 8.5.0
  ```
+
