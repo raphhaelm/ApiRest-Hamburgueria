@@ -12,10 +12,13 @@ ____
 ____
 ##### Tema: 🍔 *Hamburgueria*.
 
+
+
 ____
 
 ![dev Burger_Entidades](https://user-images.githubusercontent.com/94863711/166570095-0e9e52b6-32e4-4d66-8e42-7751c450b13c.png)
 
+#### A sua fome é o nosso bug e o nosso foco é desenvolver o seu burger
 ___
 #### 🗒️Descrição:
 *Desenvolvemos a aplicação que simula uma hamburgueria, utilizando esta aplicação é possivel, organizar sua lista de clientes, criar um cardapio, cadastrar fornecedores e anotar pedidos.
@@ -28,6 +31,8 @@ ____
 • [Sqlite](https://www.sqlite.org/docs.html )
 
 • [JavaScript_NodeJS](https://nodejs.org/en/docs/guides/)
+
+• [Insomnia](https://insomnia.rest/)
 
 
 ____
@@ -59,7 +64,7 @@ ____
   ```
 ____
 ## Para utilizar a aplicação 
-
+Inicie o terminal e rode com: 
 ```js
 npm start
 ```
@@ -67,7 +72,11 @@ npm start
 ____
 # ➡️Rotas:
 
-Nossa API conta com 4 Entidades: Cardapio, Clientes, Fornecedores e Pedidos.
+Nossa API conta com 4 Entidades e cada uma tem sua rota:
+- Cardapio
+- Clientes 
+- Fornecedores
+- Pedidos
 
 ## 🗒️Cardapio:
 Ver todo os itens do cardapio do banco de dados:
@@ -178,11 +187,24 @@ Método HTTP Get no caminho "url da api" + /pedido/:id
 
 ### ➕Adicionar novo pedido: 
 Método HTTP Post no caminho "url da api" + /pedido com os dados necessários para o seu banco de dados. Os campos para adicionar um novo pedido são: nome, produto e preco. O preco deve conter apenas números.
+```js 
+{
+  "nome": "Sr Burgão",
+  "produto": "X-Monster",
+  "preco": 10
+}
+```
 
 
 ### ↩️Alterar um pedido no banco de dados: 
 Método HTTP Put no caminho "url da api" + /pedido/:id passando os valores que deseja alterar especificando seus devidos campos.
-
+```js 
+{
+  "nome": "Sr Burgão",
+  "produto":"X-Dieta",
+  "preco": 10
+}
+```
 
 ### ❌Deletar um pedido: 
 Método HTTP Delete no caminho "url da api" + /pedido/:id.
@@ -191,8 +213,16 @@ ____
 #### 🌐Heroku:
 Para acessar a aplicação online click aqui: 
 
-[Heroku.](https://apirestdevburger.herokuapp.com/)
+[Heroku.](https://apirestdevburger.herokuapp.com/) 
+Lembre-se de adicionar a Rota que deseja..
+Ex: 
+``` js
+https://apirestdevburger.herokuapp.com/pedidos 
 
+```
+____
+### Util:
+Existe um arquivo na pasta utils chamado ["Insomnia_2022-05-04"](./src//utils/Insomnia_2022-05-04.json). No seu Insomnia você pode importar esse arquivo, fazendo isso você recebe uma coleção separada por pasta com todas as rotas e os verbos do Crud.
 ____
 #### Versão:
 ```js 
