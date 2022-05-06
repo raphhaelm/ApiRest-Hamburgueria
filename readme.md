@@ -41,8 +41,6 @@ ____
 "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "fs": "^0.0.1-security",
-    "https": "^1.0.0",
     "path": "^0.12.7",
     "sqlite": "^4.1.1",
     "sqlite3": "^5.0.6"
@@ -51,7 +49,7 @@ ____
 Para iniciar este projeto você pode copiar o código abaixo e colar no terminal (Crtl + shift + v), para fazer o clone deste repositório e instalar as dependencias.
 
 ```
-git clone https://github.com/raphhaelm/ProjetoFinalModulo4.git && cd ProjetoFinalModulo4 && npm install consign && npm install express && npm install all moment && npm install sqlite3 && npm install cors && npm install https && npm install path && npm install sqlite
+git clone https://github.com/raphhaelm/ProjetoFinalModulo4.git && cd ProjetoFinalModulo4 && npm install consign && npm install express && npm install all moment && npm install sqlite3 && npm install cors  && npm install path && npm install sqlite
 ```
 ____
 ### ⚙️Depêndecias de desenvolvimento:
