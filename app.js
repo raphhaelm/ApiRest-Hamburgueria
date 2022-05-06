@@ -1,6 +1,4 @@
 import express from "express";
-import fs from "fs";
-import https from "https";
 import cors from "cors";
 import routerClientes from "./src/rotas/routesClientes.js";
 import routerFornecedores from "./src/rotas/routesFornecedores.js";
@@ -30,7 +28,6 @@ DatabaseMetodosFornecedores.tableFornecedores();
 DatabaseMetodosCardapio.createTableCardapio();
 DatabaseMetodosPedidos.tablePedido();
 
-
 app.listen(port, () => {
   console.log(`
     █████████
@@ -43,8 +40,3 @@ app.listen(port, () => {
     ██ ██
     `)
 });
-
-https.createServer({
-  cert: fs.readFileSync('src/SSL/code.crt'),
-  key: fs.readFileSync('src/SSL/code.key')
-}, app).listen(3001, () => console.log("Protocolo https ativado com sucesso"));

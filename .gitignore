@@ -1,4 +1,5 @@
 node_modules/
 src/infra/database.db
+.gitattributes
 *.db
 .env
