@@ -13,8 +13,7 @@ class DatabaseMetodosFornecedores {
                 }
             })
         })
-    }
-
+    };
     static inserirFornecedor(fornecedor) {
         const query = `INSERT INTO Fornecedores (nome, ramo, cnpj) VALUES ( ?, ?, ?)`;
         const body = Object.values(fornecedor);
@@ -29,8 +28,7 @@ class DatabaseMetodosFornecedores {
                 }
             })
         })
-    }
-
+    };
     static updateFornecedorId(fornecedor, id) {
         const query = `UPDATE Fornecedores SET (nome, ramo, cnpj) = (?,?,?) WHERE id = ?`;
         const body = Object.values(fornecedor)
@@ -45,8 +43,7 @@ class DatabaseMetodosFornecedores {
                 }
             })
         })
-    }
-
+    };
     static selecionarFornecedor(id) {
         const query = `SELECT * FROM Fornecedores WHERE id = ?`;
         return new Promise((resolve, reject) => {
@@ -58,8 +55,7 @@ class DatabaseMetodosFornecedores {
                 }
             })
         })
-    }
-
+    };
     static selecionarFornecedores() {
         const query = `SELECT * FROM Fornecedores`;
         return new Promise((resolve, reject) => {
@@ -71,7 +67,7 @@ class DatabaseMetodosFornecedores {
                 }
             })
         })
-    }
+    };
     static deletaFornecedor(id) {
         const query = `DELETE From Fornecedores WHERE id = ?`;
         return new Promise((resolve, reject) => {
@@ -85,7 +81,7 @@ class DatabaseMetodosFornecedores {
                 }
             })
         })
-    }
+    };
 }
 
 export default DatabaseMetodosFornecedores;

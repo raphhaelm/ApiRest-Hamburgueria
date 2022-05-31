@@ -5,6 +5,6 @@ class CardapioModels {
         this.preco = preco
         this.descricao = descricao
     }
-} 
+} ;
 
 export default CardapioModels;

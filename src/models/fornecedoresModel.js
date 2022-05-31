@@ -5,6 +5,6 @@ class FornecedoresModel{
         this.ramo = ramo
         this.cnpj = cnpj
     };
-}
+};
 
 export default FornecedoresModel;

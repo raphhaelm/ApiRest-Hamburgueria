@@ -25,8 +25,6 @@ class DatabaseMetodosCardapio {
      * @param {Object} produto 
      * @returns Promisse<Object>
      */
-
-
     static inserirProduto(produto) {
         const query = `INSERT INTO Cardapio VALUES (?, ? , ?, ?)`
         
@@ -41,7 +39,6 @@ class DatabaseMetodosCardapio {
             })
         })
     };
-
     static uptCardapio(produto, id) {
         const query = `UPDATE cardapio SET (produto, preco, descricao) = (? , ?, ?) WHERE id_produto = ?`;
         const body = Object.values(produto)
@@ -56,9 +53,6 @@ class DatabaseMetodosCardapio {
             })
         })
     }
-
-
-
     static selecionarProduto(id) {
         const query = `SELECT * FROM Cardapio WHERE id_produto = ?`;
         return new Promise((resolve, reject) => {
@@ -71,7 +65,6 @@ class DatabaseMetodosCardapio {
             })
         })
     };
-
     static selecionarProdutos() {
         const query = `SELECT * FROM Cardapio `
         return new Promise((resolve, reject) => {
@@ -84,7 +77,6 @@ class DatabaseMetodosCardapio {
             })
         })
     }
-
     static deleteProduto(id) {
         const query = `DELETE FROM Cardapio WHERE id_produto=? `
         return new Promise((resolve, reject) => {
@@ -97,10 +89,6 @@ class DatabaseMetodosCardapio {
             })
         })
     }
-
-    
-
-
 }
 
 export default DatabaseMetodosCardapio

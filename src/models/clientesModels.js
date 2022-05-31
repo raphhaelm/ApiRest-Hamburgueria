@@ -5,6 +5,6 @@ class ClientesModels {
         this.telefone = telefone
         this.email = email
     }
-} 
+};
 
 export default ClientesModels;

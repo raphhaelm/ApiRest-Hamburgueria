@@ -5,5 +5,5 @@ class PedidosModel {
         this.produto = produto
         this.preco = preco
     }
-}
+};
 export default PedidosModel;
