@@ -19,7 +19,7 @@ ____
 ___
 #### Descrição:
 *Desenvolvemos a aplicação que simula uma hamburgueria, utilizando esta aplicação é possivel, organizar sua lista de clientes, criar um cardapio, cadastrar fornecedores e anotar pedidos.
-A aplicação utiliza o banco de dados Sqlite.
+A aplicação utiliza o banco de dados Sqlite e os métodos HTTP (CRUD) foram testados utilizando a ferramenta Insomnia.
 Escolhemos a arquitetura MVC para estruturar nosso código.*
 ____
 #### Ferramentas utilizadas:
@@ -28,6 +28,8 @@ ____
 • [Sqlite](https://www.sqlite.org/docs.html )
 
 • [JavaScript_NodeJS](https://nodejs.org/en/docs/guides/)
+
+• [Insomnia](https://docs.insomnia.rest/insomnia/send-your-first-request)
 
 
 ____

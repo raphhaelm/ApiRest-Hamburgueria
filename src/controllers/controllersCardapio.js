@@ -4,7 +4,8 @@ import ValidacoesCardapio from "../services/validacoesCardapio.js"
 
 export async function inserirProduto(req, res) {
     try {
-        if (ValidacoesCardapio.validaProduto(req.body.produto) && ValidacoesCardapio.ValidaPreco(req.body.preco)) {
+        
+        if (ValidacoesCardapio.validaProduto(req.body.produto) && ValidacoesCardapio.ValidaPreco(req.body.preco) && ValidacoesCardapio.ValidaDescricao(req.body.descricao)) {
             const tabela = await DatabaseMetodosCardapio.createTableCardapio();
             const produto = new CardapioModels(...Object.values(req.body))
             const response = await DatabaseMetodosCardapio.inserirProduto(produto)
@@ -23,9 +24,10 @@ export async function inserirProduto(req, res) {
 
 export async function updateCardapio(req, res) {
     try {
-        if (ValidacoesCardapio.validaProduto(req.body.produto) && ValidacoesCardapio.ValidaPreco(req.body.preco)) {
+        
+        if (ValidacoesCardapio.validaProduto(req.body.produto) && ValidacoesCardapio.ValidaPreco(req.body.preco) && ValidacoesCardapio.ValidaDescricao(req.body.descricao)) {
             
-            const produto = new CardapioModels(req.params.id, req.body.produto, req.body.preco)
+            const produto = new CardapioModels(req.params.id, req.body.produto, req.body.preco, req.body.descricao)
 
             const response = await DatabaseMetodosCardapio.uptCardapio(produto, req.params.id)
             res.status(201).json(response)

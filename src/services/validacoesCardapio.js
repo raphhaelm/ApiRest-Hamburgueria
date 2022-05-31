@@ -16,6 +16,13 @@ class ValidacoesCardapio {
             return false
         }
     }
+    static ValidaDescricao(descricao){
+        if (descricao.length <= 100){
+            return true
+        }else {
+            return false 
+        }
+    }
 
 }
 

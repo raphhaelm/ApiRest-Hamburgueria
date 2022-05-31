@@ -7,7 +7,8 @@ class DatabaseMetodosCardapio {
         const cardapio = `CREATE TABLE IF NOT EXISTS cardapio (
             id_produto INTEGER PRIMARY KEY AUTOINCREMENT,
             produto VARCHAR,
-            preco INT)`
+            preco INT,
+            descricao VARCHAR);`
 
         return new Promise((resolve, reject) => {
             Database.run(cardapio, (e) => {
@@ -27,7 +28,7 @@ class DatabaseMetodosCardapio {
 
 
     static inserirProduto(produto) {
-        const query = `INSERT INTO Cardapio VALUES (?, ? , ?)`
+        const query = `INSERT INTO Cardapio VALUES (?, ? , ?, ?)`
         
         const body = Object.values(produto)
         return new Promise((resolve, reject) => {
@@ -42,11 +43,11 @@ class DatabaseMetodosCardapio {
     };
 
     static uptCardapio(produto, id) {
-        const query = `UPDATE cardapio SET (produto, preco) = (? , ?) WHERE id_produto = ?`;
+        const query = `UPDATE cardapio SET (produto, preco, descricao) = (? , ?, ?) WHERE id_produto = ?`;
         const body = Object.values(produto)
         console.log(body)
         return new Promise((resolve, reject) => {
-            Database.run(query, [produto.produto, produto.preco, id], (e, result) => {
+            Database.run(query, [produto.produto, produto.preco, produto.descricao, id], (e, result) => {
                 if (e) {
                     reject(e.message)
                 } else {

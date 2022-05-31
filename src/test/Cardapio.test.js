@@ -21,3 +21,9 @@ test("Verifica se existe o produto no cardapio", () => {
 test("Verifica se existe o produto no cardapio", () => {
     expect(ValidacoesCardapio.validaProduto("")).toBe(false)
 });
+test("Validar se descricao tem até 100 caracteres", () => {
+    expect(ValidacoesCardapio.ValidaDescricao("abcdefghijklmnopqrstuvwxz")).toBe(true)
+})
+test("Validar se descricao é string", ()=> {
+    expect(ValidacoesCardapio.ValidaDescricao(123)).toBe(false)
+})
